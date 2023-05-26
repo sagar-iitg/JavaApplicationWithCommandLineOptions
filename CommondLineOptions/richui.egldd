@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<egl:deployment xmlns:egl="google.com">
+<egl:target.project name="target"/>
+
+<egl:containerTarget.container maintainer="hello" image="rhh:1.0",imageTag="" description="" expose=""
+ label="" add="" copy="" command="" workDirectory="" volume="" entryPoint="" run="" 
+ enableContainerDeploy="true" />
+
+</egl:deployment>

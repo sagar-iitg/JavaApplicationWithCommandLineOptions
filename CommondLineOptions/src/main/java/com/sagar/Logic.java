@@ -1,5 +1,7 @@
 package com.sagar;
 
+import java.util.ArrayList;
+
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
@@ -11,16 +13,26 @@ import org.apache.commons.cli.ParseException;
 public class Logic {
 	
 	
-	public void fun(String[] args) {
+	ArrayList<String> str=new ArrayList();
+	
+
+
+
+	public void fun(String[] args) throws Exception {
+	
+		
 		Options options = new Options();
-        Option name = new Option("f", "name", true, "First Name");
-        name.setRequired(true);
-        options.addOption(name);
-        
-        Option mobileNumber = new Option("m", "mobilenumber", true, "Mobile Number");
-        mobileNumber.setRequired(false);
-        options.addOption(mobileNumber);
-        
+		Option path = new Option("p", "path", true, "Deployment Descriptor Path");
+		Option mobileNumber = new Option("m", "mobilenumber", true, "Mobile Number");
+	    
+	
+	    path.setRequired(true);
+	    options.addOption(path);
+	    
+	   
+	    mobileNumber.setRequired(false);
+	    options.addOption(mobileNumber);
+	    
         HelpFormatter formatter = new HelpFormatter();
         CommandLineParser parser = new DefaultParser();
         CommandLine cmd;
@@ -32,12 +44,21 @@ public class Logic {
             System.exit(1);
             return;
         }
-        System.out.println("User First Name is: " + cmd.getOptionValue("name"));
+        System.out.println("Path is: " + cmd.getOptionValue("path"));
+        str.add(cmd.getOptionValue("path"));
+        str.add(cmd.getOptionValue("mobilenumber"));
+        
         //System.out.println("User Last Name is: " + cmd.getOptionValue("lastname"));
         //System.out.println("User Email is: " + cmd.getOptionValue("email"));
         if (cmd.hasOption("m")) {
             System.out.println("User Mobile Number is: " + cmd.getOptionValue("mobilenumber"));
         }
+        
+        //PatternMatching.output();
+        
+        
+        
+        
 	}
 
 }
