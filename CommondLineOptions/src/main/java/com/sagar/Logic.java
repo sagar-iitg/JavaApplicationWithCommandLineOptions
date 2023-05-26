@@ -8,21 +8,19 @@ import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
-public class CommonsCliPgm {
-    public static void main(String[] args) throws Exception {
-        Options options = new Options();
+public class Logic {
+	
+	
+	public void fun(String[] args) {
+		Options options = new Options();
         Option name = new Option("f", "name", true, "First Name");
         name.setRequired(true);
         options.addOption(name);
-        Option lastName = new Option("l", "lastname", true, "Last Name");
-        lastName.setRequired(true);
-        options.addOption(lastName);
-        Option email = new Option("e", "email", true, "Email");
-        email.setRequired(true);
-        options.addOption(email);
+        
         Option mobileNumber = new Option("m", "mobilenumber", true, "Mobile Number");
         mobileNumber.setRequired(false);
         options.addOption(mobileNumber);
+        
         HelpFormatter formatter = new HelpFormatter();
         CommandLineParser parser = new DefaultParser();
         CommandLine cmd;
@@ -35,10 +33,11 @@ public class CommonsCliPgm {
             return;
         }
         System.out.println("User First Name is: " + cmd.getOptionValue("name"));
-        System.out.println("User Last Name is: " + cmd.getOptionValue("lastname"));
-        System.out.println("User Email is: " + cmd.getOptionValue("email"));
+        //System.out.println("User Last Name is: " + cmd.getOptionValue("lastname"));
+        //System.out.println("User Email is: " + cmd.getOptionValue("email"));
         if (cmd.hasOption("m")) {
             System.out.println("User Mobile Number is: " + cmd.getOptionValue("mobilenumber"));
         }
-    }
+	}
+
 }
