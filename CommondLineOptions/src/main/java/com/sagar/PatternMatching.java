@@ -63,9 +63,14 @@ public class PatternMatching {
 		 //String param=l.str.get(0);
 		
 		String param="E:\\Java Advance\\JavaApplicationWithCommandLineOptions\\CommondLineOptions\\richui.egldd";
-		
+//		
 		Path fileName
        = Path.of(param);
+		
+		
+//		Path fileName
+//	       = new Path(param);
+		
 		  // Now calling Files.readString() method to
        // read the file
        String str = Files.readString(fileName);

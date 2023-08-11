@@ -1,4 +1,4 @@
-package pkg;
+
 import java.util.Arrays;
 
 import com.sk.*;
@@ -18,7 +18,7 @@ class Docker {
         System.out.println(path);
         ReadDD r=new ReadDD();
         String s=r.readDD(path);
-       // System.out.println(s);
+        System.out.println(s);
         String[] res=r.patterMatching(s);
         System.out.println(Arrays.toString(res));
         r.writeInDockerFile(res);
